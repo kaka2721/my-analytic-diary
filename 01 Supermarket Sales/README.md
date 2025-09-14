@@ -26,7 +26,7 @@ flowchart LR
     A["ANOVA (test to see if sales differ by day of the week)"] -- "Yes (p_val<0.05)" --> B{"Tukey's HSD test result"}
     A -- "No (p_val>0.05)" --> C["Check weekday vs weekends (two-group T-test)"]
     C -- "Yes" --> D[ ✌️ ]
-    C -- "No" --> E["Kruskal-Wallis test (sales not normally distributed)"]
+    C -- "No (kinda assured ANOVA:sales DO NOT differ by day)" --> E["Kruskal-Wallis test (sales not normally distributed)"]
     E --> F[continue...]
     
 ```
